@@ -40,7 +40,22 @@ app.use(flash())
   
 app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
- 
-app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
-})    
+
+const PORT = 8000
+
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`Server running on port ${PORT}`)
+})
+
+/**
+ * @Things_To_Add
+ * 
+ * @One - Add Google, Micrososoft, or some other Auth
+ * @Two - Make multiple lists
+ * @Three - since we grab ToDos randomly from the database, maybe we can sort it in the database so it is quicker to search and grab info from it
+ * @Four - password requirements, 8 characters (already done), uppercase, number, etc
+ * @Five - add title, maybe add a person to do it
+ * @Six - time sensative, maybe remove it
+ * @Seven - Add way to go back to sign up page from the login page
+ * @Eight - Add CSS
+ */
